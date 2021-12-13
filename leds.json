@@ -1,0 +1,1186 @@
+ [
+  {
+    "address": "0x01",
+    "name": "Escape",
+    "characters": "Esc / FnLock",
+    "button": "Esc",
+    "horizontalPosition": 2,
+    "verticalPosition": 1
+  },
+  {
+    "address": "0x02",
+    "name": "F1",
+    "characters": "F1 / [mute sound]",
+    "button": "F1",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x03",
+    "name": "F2",
+    "characters": "F2 / [volume down]",
+    "button": "F2",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x04",
+    "name": "F3",
+    "characters": "F3 / [volume up]",
+    "button": "F3",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x05",
+    "name": "F4",
+    "characters": "F4 / [mute microphone]",
+    "button": "F4",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x06",
+    "name": "F5",
+    "characters": "F5 / [screen brightness down]",
+    "button": "F5",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x07",
+    "name": "F6",
+    "characters": "F6 / [screen brightness up]",
+    "button": "F6",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x08",
+    "name": "F7",
+    "characters": "F7 / [external display change]",
+    "button": "F7",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x09",
+    "name": "F8",
+    "characters": "F8 / [plane mode]",
+    "button": "F8",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0a",
+    "name": "F9",
+    "characters": "F9 / [star]",
+    "button": "F9",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0b",
+    "name": "F10",
+    "characters": "F10 / [toggle touchpad]",
+    "button": "F10",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0c",
+    "name": "F11",
+    "characters": "F11 / [blocks]",
+    "button": "F11",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0d",
+    "name": "F12",
+    "characters": "F12 / [calculator]",
+    "button": "F12",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0e",
+    "name": "Insert",
+    "characters": "Insert",
+    "button": "Insert",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x0f",
+    "name": "PrtSc",
+    "characters": "PrtSc / [snipping tool]",
+    "button": "PrtSc",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x10",
+    "name": "Del",
+    "characters": "Del",
+    "button": "Del",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x11",
+    "name": "Home",
+    "characters": "Home / [play/pause]",
+    "button": "Home",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x12",
+    "name": "End",
+    "characters": "End / [stop]",
+    "button": "End",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x13",
+    "name": "Page up",
+    "characters": "PgUp / [prev media]",
+    "button": "Page up",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x14",
+    "name": "Page down",
+    "characters": "PgDn / [next media]",
+    "button": "Page down",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x16",
+    "name": "~",
+    "characters": "~",
+    "button": "`",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x17",
+    "name": "!",
+    "characters": "!",
+    "button": "1",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x18",
+    "name": "@",
+    "characters": "@",
+    "button": "2",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x19",
+    "name": "#",
+    "characters": "#",
+    "button": "3",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1a",
+    "name": "$",
+    "characters": "$",
+    "button": "4",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1b",
+    "name": "%",
+    "characters": "%",
+    "button": "5",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1c",
+    "name": "^",
+    "characters": "^",
+    "button": "6",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1d",
+    "name": "&",
+    "characters": "&",
+    "button": "7",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1e",
+    "name": "*",
+    "characters": "*",
+    "button": "8",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x1f",
+    "name": "(",
+    "characters": "(",
+    "button": "9",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x20",
+    "name": ")",
+    "characters": ")",
+    "button": "0",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x21",
+    "name": "_",
+    "characters": "_",
+    "button": "-",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x22",
+    "name": "+",
+    "characters": "+",
+    "button": "=",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x26",
+    "name": "Num Lock (bottom)",
+    "characters": "Num",
+    "button": "Num Lock",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x27",
+    "name": "Num /",
+    "characters": "/",
+    "button": "Num /",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x28",
+    "name": "Num *",
+    "characters": "*",
+    "button": "Num *",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x29",
+    "name": "Num -",
+    "characters": "-",
+    "button": "Num -",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x2b",
+    "name": "`",
+    "characters": "`",
+    "button": "`",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x2c",
+    "name": "1",
+    "characters": "1",
+    "button": "1",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x2d",
+    "name": "2",
+    "characters": "2",
+    "button": "2",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x2e",
+    "name": "3",
+    "characters": "3",
+    "button": "3",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x2f",
+    "name": "4",
+    "characters": "4",
+    "button": "4",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x30",
+    "name": "5",
+    "characters": "5",
+    "button": "5",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x31",
+    "name": "6",
+    "characters": "6",
+    "button": "6",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x32",
+    "name": "7",
+    "characters": "7",
+    "button": "7",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x33",
+    "name": "8",
+    "characters": "8",
+    "button": "8",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x34",
+    "name": "9",
+    "characters": "9",
+    "button": "9",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x35",
+    "name": "0",
+    "characters": "0",
+    "button": "0",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x36",
+    "name": "-",
+    "characters": "-",
+    "button": "-",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x37",
+    "name": "=",
+    "characters": "=",
+    "button": "=",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x38",
+    "name": "Backspace (left)",
+    "characters": "Bac",
+    "button": "Backspace",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x39",
+    "name": "Backspace (mid)",
+    "characters": "ksp",
+    "button": "Backspace",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x3a",
+    "name": "Backspace (right)",
+    "characters": "pace",
+    "button": "Backspace",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x3b",
+    "name": "Num Lock (top)",
+    "characters": "Lock",
+    "button": "Num Lock",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x40",
+    "name": "Tab",
+    "characters": "Tab",
+    "button": "Tab",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x42",
+    "name": "Q",
+    "characters": "Q",
+    "button": "Q",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x43",
+    "name": "W",
+    "characters": "W",
+    "button": "W",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x44",
+    "name": "E",
+    "characters": "E",
+    "button": "E",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x45",
+    "name": "R",
+    "characters": "R",
+    "button": "R",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x46",
+    "name": "T",
+    "characters": "T",
+    "button": "T",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x47",
+    "name": "Y",
+    "characters": "Y",
+    "button": "Y",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x48",
+    "name": "U",
+    "characters": "U",
+    "button": "U",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x49",
+    "name": "I",
+    "characters": "I",
+    "button": "I",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4a",
+    "name": "O",
+    "characters": "O",
+    "button": "O",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4b",
+    "name": "P",
+    "characters": "P",
+    "button": "P",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4c",
+    "name": "{",
+    "characters": "{",
+    "button": "[",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4d",
+    "name": "}",
+    "characters": "}",
+    "button": "]",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4e",
+    "name": "|",
+    "characters": "|",
+    "button": "\\",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x4f",
+    "name": "Num 7",
+    "characters": "7",
+    "button": "Num 7",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x50",
+    "name": "Num 8",
+    "characters": "8",
+    "button": "Num 8",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x51",
+    "name": "Num 9",
+    "characters": "9",
+    "button": "Num 9",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x55",
+    "name": "Caps Lock (left)",
+    "characters": "Ca",
+    "button": "Caps Lock",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x56",
+    "name": "Caps Lock (mid)",
+    "characters": "psL",
+    "button": "Caps Lock",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x57",
+    "name": "Caps Lock (right)",
+    "characters": "Lk",
+    "button": "Caps Lock",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x58",
+    "name": "D",
+    "characters": "D",
+    "button": "D",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x59",
+    "name": "F",
+    "characters": "F",
+    "button": "F",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5a",
+    "name": "G",
+    "characters": "G",
+    "button": "G",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5b",
+    "name": "K",
+    "characters": "K",
+    "button": "K",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5c",
+    "name": "L",
+    "characters": "L",
+    "button": "L",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5d",
+    "name": ":",
+    "characters": ":",
+    "button": ";",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5e",
+    "name": ";",
+    "characters": ";",
+    "button": ";",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x5f",
+    "name": "\"",
+    "characters": "\"",
+    "button": "'",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x60",
+    "name": "'",
+    "characters": "'",
+    "button": "'",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x61",
+    "name": "[",
+    "characters": "[",
+    "button": "[",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x62",
+    "name": "]",
+    "characters": "]",
+    "button": "]",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x63",
+    "name": "\\",
+    "characters": "\\",
+    "button": "\\",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x64",
+    "name": "Num 7",
+    "characters": "7",
+    "button": "Num 7",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x65",
+    "name": "Num 8",
+    "characters": "8",
+    "button": "Num 8",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x66",
+    "name": "Num Page up ",
+    "characters": "9",
+    "button": "Num Page up",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x67",
+    "name": "Num + (left)",
+    "characters": "+",
+    "button": "Num +",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x68",
+    "name": "Num + (right)",
+    "characters": "+",
+    "button": "Num +",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x6a",
+    "name": "Left Shift (left)",
+    "characters": "Sh",
+    "button": "Left Shift",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x6b",
+    "name": "Left shift (right)",
+    "characters": "ift",
+    "button": "Left shift",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x6d",
+    "name": "A",
+    "characters": "A",
+    "button": "A",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x6e",
+    "name": "S",
+    "characters": "S",
+    "button": "S",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x6f",
+    "name": "C",
+    "characters": "C",
+    "button": "C",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x70",
+    "name": "V",
+    "characters": "V",
+    "button": "V",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x71",
+    "name": "H",
+    "characters": "H",
+    "button": "H",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x72",
+    "name": "J",
+    "characters": "J",
+    "button": "J",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x73",
+    "name": "M",
+    "characters": "M",
+    "button": "M",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x74",
+    "name": "<",
+    "characters": "<",
+    "button": ",",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x75",
+    "name": ">",
+    "characters": ">",
+    "button": ".",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x76",
+    "name": "?",
+    "characters": "?",
+    "button": "/",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x77",
+    "name": "Enter (left)",
+    "characters": "Ent",
+    "button": "Enter",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x78",
+    "name": "Enter (right)",
+    "characters": "ter",
+    "button": "Enter",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x79",
+    "name": "Num 4",
+    "characters": "4",
+    "button": "Num 4",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x7a",
+    "name": "Num Arrow left",
+    "characters": "[Num Arrow left]",
+    "button": "Num Arrow left",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x7b",
+    "name": "Num 5",
+    "characters": "5",
+    "button": "Num 5",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x7c",
+    "name": "Num 6",
+    "characters": "6",
+    "button": "Num 6",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x7d",
+    "name": "Num Arrow right",
+    "characters": "[Num Arrow right]",
+    "button": "Num Arrow right",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x7f",
+    "name": "Left Ctrl",
+    "characters": "Ctrl",
+    "button": "Left Ctrl",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x80",
+    "name": "Fn",
+    "characters": "Fn",
+    "button": "Fn",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x82",
+    "name": "Z",
+    "characters": "Z",
+    "button": "Z",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x83",
+    "name": "X",
+    "characters": "X",
+    "button": "X",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x87",
+    "name": "B",
+    "characters": "B",
+    "button": "B",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x88",
+    "name": "N",
+    "characters": "N",
+    "button": "N",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x89",
+    "name": ",",
+    "characters": ",",
+    "button": ",",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x8a",
+    "name": ".",
+    "characters": ".",
+    "button": ".",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x8b",
+    "name": "/",
+    "characters": "/",
+    "button": "/",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x8d",
+    "name": "Right Shift (left)",
+    "characters": "Sh",
+    "button": "Right Shift",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x8e",
+    "name": "Num 1",
+    "characters": "1",
+    "button": "Num",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x8f",
+    "name": "Num End",
+    "characters": "End",
+    "button": "Num End",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x90",
+    "name": "Num 2",
+    "characters": "2",
+    "button": "Num 2",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x91",
+    "name": "Num Arrow down",
+    "characters": "[Num Arrow down]",
+    "button": "Num Arrow down",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x92",
+    "name": "Num 3",
+    "characters": "3",
+    "button": "Num 3",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x93",
+    "name": "Num Page down",
+    "characters": "PgDn",
+    "button": "Num Page down",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x96",
+    "name": "Windows",
+    "characters": "[Windows logo]",
+    "button": "Windows",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x97",
+    "name": "Left Alt",
+    "characters": "Alt",
+    "button": "Left Alt",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x98",
+    "name": "Space (left)",
+    "characters": "[Glow]",
+    "button": "Space",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x99",
+    "name": "Space (right)",
+    "characters": "[Glow]",
+    "button": "Space",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x9a",
+    "name": "Right Alt",
+    "characters": "Alt",
+    "button": "Right Alt",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x9b",
+    "name": "Right Ctrl",
+    "characters": "Ctrl",
+    "button": "Right Ctrl",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0x9c",
+    "name": "Arrow left",
+    "characters": "[Arrow left]",
+    "button": "Arrow left",
+    "horizontalPosition": 215,
+    "verticalPosition": 11
+  },
+  {
+    "address": "0x9d",
+    "name": "Arrow up",
+    "characters": "[Arrow up]",
+    "button": "Arrow up",
+    "horizontalPosition": 240,
+    "verticalPosition": 29
+  },
+  {
+    "address": "0x9e",
+    "name": "Glow brightness up",
+    "characters": "[Glow brightness up]",
+    "button": "Arrow up",
+    "horizontalPosition": 240,
+    "verticalPosition": 24
+  },
+  {
+    "address": "0x9f",
+    "name": "Arrow down",
+    "characters": "[Arrow down]",
+    "button": "Arrow down",
+    "horizontalPosition": 240,
+    "verticalPosition": 13
+  },
+  {
+    "address": "0xa0",
+    "name": "Glow brightness down",
+    "characters": "[Glow brightness down]",
+    "button": "Arrow down",
+    "horizontalPosition": 240,
+    "verticalPosition": 7
+  },
+  {
+    "address": "0xa1",
+    "name": "Arrow right",
+    "characters": "[Arrow right]",
+    "button": "Arrow right",
+    "horizontalPosition": 264,
+    "verticalPosition": 11
+  },
+  {
+    "address": "0xa2",
+    "name": "Right shift (right)",
+    "characters": "ift",
+    "button": "Right shift",
+    "horizontalPosition": 264,
+    "verticalPosition": 44
+  },
+  {
+    "address": "0xa3",
+    "name": "Num 0",
+    "characters": "Num 0",
+    "button": "Num 0",
+    "horizontalPosition": 278,
+    "verticalPosition": 29
+  },
+  {
+    "address": "0xa4",
+    "name": "Num Ins",
+    "characters": "Ins",
+    "button": "Num 0 ins [bottom-right]",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xa5",
+    "name": "Num .",
+    "characters": ".",
+    "button": "Num .",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xa6",
+    "name": "Num Del",
+    "characters": "Del",
+    "button": "Num Del",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xa7",
+    "name": "Num Enter (left)",
+    "characters": "Ent",
+    "button": "Num Enter",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xa8",
+    "name": "Num Enter (right)",
+    "characters": "er",
+    "button": "Num Enter",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xaa",
+    "name": "Logo",
+    "characters": "[LEGION logo]",
+    "button": "none - back lid",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xac",
+    "name": "Neon",
+    "characters": "[Front neon]",
+    "button": "none - front bottom",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  },
+  {
+    "address": "0xad",
+    "name": "Vents",
+    "characters": "[Back vents]",
+    "button": "none - back vents",
+    "horizontalPosition": 0,
+    "verticalPosition": 0
+  }
+]
