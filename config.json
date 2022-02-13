@@ -1,0 +1,26 @@
+{
+  "modes": {
+    "spectrum": {
+      "invertVertically": true,
+      "smoothVertically": true,
+      "smoothHorizontally": true,
+      "colors": {
+        "main0": "#FF0020",
+        "main1": "#FF0020",
+        "main2": "#FF0020",
+        "background0": "#0F0001",
+        "background1": "#0F0001",
+        "background2": "#0F0001",
+        "logo": "#0F0001",
+        "neon": "#0F0001",
+        "vents": "#0F0001"
+      }
+    }
+  },
+  "dev": {
+    "temp0": "",
+    "temp1": "",
+    "temp2": "",
+    "temp3": ""
+  }
+}

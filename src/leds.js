@@ -1,11 +1,32 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Leds = void 0;
+const Functions = __importStar(require("./functions"));
 class Leds {
-    constructor(jsonData) {
+    constructor(jsonData, defaultColor) {
         this._brightness = 255;
         this.getBytes = () => {
-            let result = this.leds.map((led) => [
+            // console.log("before brigh", this.ledsArray)
+            let result = this.ledsArray.map((led) => [
                 led.address,
                 Math.floor(led.color.red * (this._brightness / 255)),
                 Math.floor(led.color.green * (this._brightness / 255)),
@@ -28,11 +49,19 @@ class Leds {
             }, []);
             return result;
         };
-        this.leds = JSON.parse(jsonData);
-        this.leds.forEach((led) => {
-            led.color = { red: 255, green: 0, blue: 20 };
+        this.ledsArray = JSON.parse(jsonData);
+        this.ledsArray.forEach((led) => {
+            led.color = {
+                red: defaultColor.red,
+                green: defaultColor.green,
+                blue: defaultColor.blue,
+            };
+            led.sideSegmentsBleedingStrength = 0;
             led.address = parseInt(led.address.toString(), 16);
+            led.virtualVerticalPosition = Functions.mapValue(led.verticalPosition, 2, 115, 0, 999);
         });
+        var foo = this.ledsArray.slice(0, 30);
+        // console.log(`foo`, foo)
         // console.log("leds:", this.leds)
     }
     set brightness(v) {

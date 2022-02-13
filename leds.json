@@ -252,7 +252,7 @@
     "name": "_",
     "characters": "_",
     "button": "-",
-    "horizontalPosition": 113,
+    "horizontalPosition": 213,
     "verticalPosition": 102
   },
   {
@@ -265,11 +265,11 @@
   },
   {
     "address": "0x26",
-    "name": "Num Lock (bottom)",
+    "name": "Num Lock (top)",
     "characters": "Num",
     "button": "Num Lock",
     "horizontalPosition": 278,
-    "verticalPosition": 98
+    "verticalPosition": 100
   },
   {
     "address": "0x27",
@@ -388,7 +388,7 @@
     "name": "-",
     "characters": "-",
     "button": "-",
-    "horizontalPosition": 113,
+    "horizontalPosition": 213,
     "verticalPosition": 96
   },
   {
@@ -425,11 +425,11 @@
   },
   {
     "address": "0x3b",
-    "name": "Num Lock (top)",
+    "name": "Num Lock (bottom)",
     "characters": "Lock",
     "button": "Num Lock",
     "horizontalPosition": 278,
-    "verticalPosition": 100
+    "verticalPosition": 98
   },
   {
     "address": "0x40",
@@ -724,7 +724,7 @@
     "name": "Num + (right)",
     "characters": "+",
     "button": "Num +",
-    "horizontalPosition": 324,
+    "horizontalPosition": 325,
     "verticalPosition": 72
   },
   {

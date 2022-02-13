@@ -3,16 +3,20 @@
 import * as Functions from "./functions";
 import * as Types from "./types";
 import { Leds } from "./leds";
+import ConfigManager from "./configManager";
+import LedsController from "./ledsController";
+import CavaRunner from "./cavaRunner";
 import * as fs from "fs";
 import * as path from "path";
 import * as yargs from "yargs";
 import HID from "node-hid";
+import KeyboardAnimator from "./keyboardAnimator";
+const readline = require("readline");
 
-const devices = HID.devices();
-const deviceInfo = devices.find(function (d) {
-  const isKeyboard = d.vendorId === 0x048d && d.productId === 0xc956;
-  return isKeyboard;
-});
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+let hue = 357;
+let lightness = 50;
 
 const options = yargs
   .option("v", {
@@ -23,74 +27,60 @@ const options = yargs
   })
   .option("c", {
     alias: "color",
-    describe: "Hue of the color",
-    type: "number",
-    default: 349,
+    describe: "Hex color",
+    type: "string",
+    default: "#FF0010",
     demandOption: false,
   }).argv;
 
 const isVerbose = options.v !== undefined && options.v;
 
-const hue = options.c;
-let indexesFlags = 0b10000001; // stripBot, stripTop, indicator0, stripIns, fanFrontBot, fanFrontMid, fanFrontTop, fanRearTop
+const color: Types.Color = Functions.parseHexColor(options.c) ?? {
+  red: 255,
+  green: 0,
+  blue: 16,
+};
+Object.freeze(color);
+const configManager = new ConfigManager();
+const ledsController = new LedsController(color);
+const keyboardAnimator = new KeyboardAnimator(ledsController, configManager);
+const onCavaData = (values: number[]): void => {
+  // console.log(`values`, values)
+  keyboardAnimator.onCavaData(values);
+};
 
-// let webSocketBoard = new WebSocket("ws://192.168.1.30:81/");
-// webSocketBoard.on("open", function open() {
-//   console.log("board connection opened");
-//   // webSocketBoard.send(`hue=${hue.toString().padStart(3, "0")}`);
-// });
-// webSocketBoard.on("close", function incoming(message) {
-//   console.log("board connection closed");
-//   webSocketBoard = new WebSocket("ws://192.168.1.35:81/");
-// });
+process.stdin.on("keypress", (str: string, key: Types.Key) => {
+  if (key.ctrl && key.name === "c") {
+    process.exit();
+  } else {
+    // console.log(key.name);
 
-let basePath = path.resolve(__dirname, "../");
-let cavaConfigPath = `${basePath}/cava.config`;
-let rawData = fs.readFileSync("leds.json");
-
-const leds = new Leds(rawData.toString());
-if (isVerbose) console.log({ cavaConfigPath });
-
-if (deviceInfo && deviceInfo?.path) {
-  const device = new HID.HID(deviceInfo.path);
-  var ledByteChunks = leds.getByteChunks();
-  ledByteChunks.forEach((chunk, idx) => {
-    // console.log(`writing packet #${idx}`);
-    device.sendFeatureReport(chunk);
-  });
-
-  let spawn = require("child_process").spawn;
-  let childrenProcess = spawn("unbuffer", ["cava", "-p", cavaConfigPath]);
-  childrenProcess.stdout.setEncoding("utf8");
-
-  childrenProcess.stdout.on("data", function (data: any) {
-    let str: string = data.toString();
-    let lines = str.split(/(\r?\n)/g);
-    let text = lines.join("");
-    let values = text.split(";");
-    let isFull = values.length === 21 && values[values.length - 1] === "!";
-    if (isFull) values.pop();
-    values = values
-      .map((v) => v?.padStart(3, "0"))
-      .map((v) => (v?.length > 3 ? "999" : v));
-    let numericValues = values.map((v) =>
-      Math.floor(Functions.mapValue(parseInt(v), 0, 999, 10, 255))
-    );
-    // text = `${indexesFlags.toString().padStart(3, "0")}:${values.join(";")};`;
-
-    if (isFull) {
-      // if (isVerbose) console.log(numericValues);
-      leds.brightness = numericValues[0];
-      ledByteChunks = leds.getByteChunks();
-      ledByteChunks.forEach((chunk, idx) => {
-        // console.log(`chunk #${idx}`, chunk);
-        // console.log(`writing packet #${idx}`);
-        device.sendFeatureReport(chunk);
-      });
+    switch (key.name) {
+      case "up":
+        lightness = (++lightness) % 100;
+        break;
+      case "down":
+        lightness = (--lightness) % 100;
+        break;
+      case "left":
+        hue = (--hue) % 360;
+        break;
+      case "right":
+        hue = (++hue) % 360;
+        break;
+      case "r":
+        configManager.updateConfig();
+        break;
+      case "s":
+        configManager.config.modes.spectrum.invertVertically =
+          !configManager.config.modes.spectrum.invertVertically;
+        break;
+      default:
+        break;
     }
-  });
-
-  childrenProcess.on("close", function (code: any) {
-    console.log("process exit code " + code);
-  });
-}
+    console.log({ hue, lightness });
+    keyboardAnimator.selectHueAndLightness(hue, lightness);
+  }
+});
+var cavaRunner = new CavaRunner();
+cavaRunner.onData = onCavaData;

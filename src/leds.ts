@@ -1,14 +1,22 @@
 import * as Types from "./types";
-
+import * as Functions from "./functions";
 export class Leds {
-  leds: Types.Led[];
+  ledsArray: Types.Led[];
   _brightness = 255;
-  constructor(jsonData: string) {
-    this.leds = JSON.parse(jsonData);
-    this.leds.forEach((led) => {
-      led.color = { red: 255, green: 0, blue: 20 };
+  constructor(jsonData: string, defaultColor: Types.Color) {
+    this.ledsArray = JSON.parse(jsonData);
+    this.ledsArray.forEach((led) => {
+      led.color = {
+        red: defaultColor.red,
+        green: defaultColor.green,
+        blue: defaultColor.blue,
+      };
+      led.sideSegmentsBleedingStrength = 0;
       led.address = parseInt(led.address.toString(), 16);
+      led.virtualVerticalPosition = Functions.mapValue(led.verticalPosition, 2,115,0,999)
     });
+    var foo = this.ledsArray.slice(0,30)
+    // console.log(`foo`, foo)
     // console.log("leds:", this.leds)
   }
 
@@ -18,7 +26,8 @@ export class Leds {
   }
 
   getBytes = () => {
-    let result = this.leds.map((led) => [
+    // console.log("before brigh", this.ledsArray)
+    let result = this.ledsArray.map((led) => [
       led.address,
       Math.floor(led.color.red * (this._brightness / 255)),
       Math.floor(led.color.green * (this._brightness / 255)),
