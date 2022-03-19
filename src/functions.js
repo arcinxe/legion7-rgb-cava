@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.clamp = exports.hslToRgb = exports.parseHexColor = exports.mapValue = void 0;
+exports.hslToHsv = exports.hsvToHsl = exports.clamp = exports.rgbColorToHsl = exports.rgbToHsl = exports.hslToRgb = exports.hslColorToRgb = exports.parseHexColor = exports.mapValue = void 0;
 let mapValue = (x, inMin, inMax, outMin, outMax) => {
     return ((x - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };
@@ -24,6 +24,11 @@ const parseHexColor = (hexValue) => {
     };
 };
 exports.parseHexColor = parseHexColor;
+const hslColorToRgb = (color) => {
+    const { hue, saturation, lightness } = color;
+    return (0, exports.hslToRgb)(hue, saturation, lightness);
+};
+exports.hslColorToRgb = hslColorToRgb;
 const hslToRgb = (hue, saturation, lightness) => {
     let red, green, blue;
     if (saturation == 0) {
@@ -58,5 +63,47 @@ const hslToRgb = (hue, saturation, lightness) => {
     };
 };
 exports.hslToRgb = hslToRgb;
+const rgbToHsl = (red, green, blue) => {
+    (red /= 255), (green /= 255), (blue /= 255);
+    var max = Math.max(red, green, blue), min = Math.min(red, green, blue);
+    var hue = 0, saturation, lightness = (max + min) / 2;
+    if (max == min) {
+        hue = saturation = 0; // achromatic
+    }
+    else {
+        var d = max - min;
+        saturation = lightness > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case red:
+                hue = (green - blue) / d + (green < blue ? 6 : 0);
+                break;
+            case green:
+                hue = (blue - red) / d + 2;
+                break;
+            case blue:
+                hue = (red - green) / d + 4;
+                break;
+        }
+        hue /= 6;
+    }
+    return { hue, saturation, lightness };
+};
+exports.rgbToHsl = rgbToHsl;
+const rgbColorToHsl = (color) => {
+    const { red, green, blue } = color;
+    return (0, exports.rgbToHsl)(red, green, blue);
+};
+exports.rgbColorToHsl = rgbColorToHsl;
 const clamp = (value, min, max) => value <= min ? min : value >= max ? max : value;
 exports.clamp = clamp;
+const hsvToHsl = (hue, saturation, value) => {
+    const lightness = value - (value * saturation) / 2;
+    const min = Math.min(lightness, 1 - lightness);
+    return { hue, saturation: min ? (value - lightness) / min : 0, lightness };
+};
+exports.hsvToHsl = hsvToHsl;
+const hslToHsv = (hue, saturation, lightness) => {
+    const value = saturation * Math.min(lightness, 1 - lightness) + lightness;
+    return { hue, saturation: value ? 2 - (2 * lightness) / value : 0, value };
+};
+exports.hslToHsv = hslToHsv;

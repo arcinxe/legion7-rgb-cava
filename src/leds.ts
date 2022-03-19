@@ -3,7 +3,7 @@ import * as Functions from "./functions";
 export class Leds {
   ledsArray: Types.Led[];
   _brightness = 255;
-  constructor(jsonData: string, defaultColor: Types.Color) {
+  constructor(jsonData: string, defaultColor: Types.ColorRgb) {
     this.ledsArray = JSON.parse(jsonData);
     this.ledsArray.forEach((led) => {
       led.color = {
@@ -26,7 +26,7 @@ export class Leds {
   }
 
   getBytes = () => {
-    // console.log("before brigh", this.ledsArray)
+    // console.log("before brightness", this.ledsArray)
     let result = this.ledsArray.map((led) => [
       led.address,
       Math.floor(led.color.red * (this._brightness / 255)),

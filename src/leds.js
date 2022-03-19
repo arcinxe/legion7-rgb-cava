@@ -25,7 +25,7 @@ class Leds {
     constructor(jsonData, defaultColor) {
         this._brightness = 255;
         this.getBytes = () => {
-            // console.log("before brigh", this.ledsArray)
+            // console.log("before brightness", this.ledsArray)
             let result = this.ledsArray.map((led) => [
                 led.address,
                 Math.floor(led.color.red * (this._brightness / 255)),

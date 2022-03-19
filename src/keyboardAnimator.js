@@ -30,8 +30,12 @@ class KeyboardAnimator {
             this.mode = mode;
         };
         this.selectHueAndLightness = (hue, lightness) => {
-            this.color = Functions.hslToRgb(hue / 360, 1, lightness / 100);
-            console.log("current color: ", this.color);
+            this.colorRgb = Functions.hslToRgb(hue / 360, 1, lightness / 100);
+            console.log("current color: ", this.colorRgb);
+        };
+        this.changeHueAndLightness = (hue, lightness) => {
+            this.colorRgb = Functions.hslToRgb(hue / 360, 1, lightness / 100);
+            console.log("current color: ", this.colorRgb);
         };
         this.onCavaData = (values) => {
             this.audioData = values;
@@ -75,16 +79,17 @@ class KeyboardAnimator {
                         brightness = Functions.mapValue(lowFreqMax, 0, 999, 0, 255);
                     }
                 });
-                led.color.red = Math.floor((this.color.red * brightness) / 255);
-                led.color.green = Math.floor((this.color.green * brightness) / 255);
-                led.color.blue = Math.floor((this.color.blue * brightness) / 255);
+                led.color.red = Math.floor((this.colorRgb.red * brightness) / 255);
+                led.color.green = Math.floor((this.colorRgb.green * brightness) / 255);
+                led.color.blue = Math.floor((this.colorRgb.blue * brightness) / 255);
             });
             this.ledsController.updateLeds();
         };
         this.ledsController = ledsController;
         this.configManager = configManager;
         this.audioData = [];
-        this.color = ledsController.color;
+        this.colorRgb = ledsController.color;
+        this.colorHsl = Functions.rgbColorToHsl(ledsController.color);
         let config = this.configManager.config;
         // console.log(JSON.stringify(config))
         ledsController.updateLeds();

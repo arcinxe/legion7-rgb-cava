@@ -29,11 +29,14 @@ const ledsController_1 = __importDefault(require("./ledsController"));
 const cavaRunner_1 = __importDefault(require("./cavaRunner"));
 const yargs = __importStar(require("yargs"));
 const keyboardAnimator_1 = __importDefault(require("./keyboardAnimator"));
+const arktiLightClient_1 = __importDefault(require("./arktiLightClient"));
 const readline = require("readline");
 readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 let hue = 357;
 let lightness = 50;
+let controllingKeyboard = true;
+let controllingSoundbar = true;
 const options = yargs
     .option("v", {
     alias: "verbose",
@@ -47,6 +50,20 @@ const options = yargs
     type: "string",
     default: "#FF0010",
     demandOption: false,
+})
+    .option("b", {
+    alias: "soundbar",
+    describe: "Enable arktilight for soundbar",
+    type: "boolean",
+    demandOption: false,
+    default: false,
+})
+    .option("s", {
+    alias: "shelf",
+    describe: "Enable arktilight for shelf light",
+    type: "boolean",
+    demandOption: false,
+    default: false,
 }).argv;
 const isVerbose = options.v !== undefined && options.v;
 const color = Functions.parseHexColor(options.c) ?? {
@@ -58,9 +75,19 @@ Object.freeze(color);
 const configManager = new configManager_1.default();
 const ledsController = new ledsController_1.default(color);
 const keyboardAnimator = new keyboardAnimator_1.default(ledsController, configManager);
-const onCavaData = (values) => {
+let arktiLightClientSoundbar;
+let arktiLightClientShelf;
+if (options.b) {
+    arktiLightClientSoundbar = new arktiLightClient_1.default(configManager, "192.168.1.5");
+}
+if (options.s) {
+    arktiLightClientShelf = new arktiLightClient_1.default(configManager, "192.168.1.2");
+}
+let onCavaData = (values) => {
     // console.log(`values`, values)
     keyboardAnimator.onCavaData(values);
+    arktiLightClientSoundbar?.onCavaData(values);
+    arktiLightClientShelf?.onCavaData(values);
 };
 process.stdin.on("keypress", (str, key) => {
     if (key.ctrl && key.name === "c") {
@@ -68,18 +95,20 @@ process.stdin.on("keypress", (str, key) => {
     }
     else {
         // console.log(key.name);
+        let lightnessChange = 0;
+        let hueChange = 0;
         switch (key.name) {
             case "up":
-                lightness = (++lightness) % 100;
+                lightness = Math.abs(++lightness % 101);
                 break;
             case "down":
-                lightness = (--lightness) % 100;
+                lightness = Math.abs(--lightness % 101);
                 break;
             case "left":
-                hue = (--hue) % 360;
+                hue = --hue % 361;
                 break;
             case "right":
-                hue = (++hue) % 360;
+                hue = ++hue % 361;
                 break;
             case "r":
                 configManager.updateConfig();
@@ -88,11 +117,20 @@ process.stdin.on("keypress", (str, key) => {
                 configManager.config.modes.spectrum.invertVertically =
                     !configManager.config.modes.spectrum.invertVertically;
                 break;
+            case "k":
+                controllingKeyboard = !controllingKeyboard;
+                break;
+            case "b":
+                controllingSoundbar = !controllingSoundbar;
+                break;
             default:
                 break;
         }
         console.log({ hue, lightness });
-        keyboardAnimator.selectHueAndLightness(hue, lightness);
+        if (controllingKeyboard)
+            keyboardAnimator.selectHueAndLightness(hue, lightness);
+        if (controllingSoundbar)
+            arktiLightClientSoundbar.selectHueAndLightness(hue, lightness);
     }
 });
 var cavaRunner = new cavaRunner_1.default();

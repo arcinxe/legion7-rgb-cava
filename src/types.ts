@@ -5,18 +5,28 @@ export interface Led {
   button: string;
   horizontalPosition: number;
   verticalPosition: number;
-  color: Color;
+  color: ColorRgb;
   virtualVerticalPosition: number;
   sideSegmentsBleedingStrength: number;
 }
 
-export interface Color {
+export interface ColorRgb {
   red: number;
   green: number;
   blue: number;
 }
-
+export interface ColorHsv {
+  hue: number;
+  saturation: number;
+  value: number;
+}
+export interface ColorHsl {
+  hue: number;
+  saturation: number;
+  lightness: number;
+}
 export interface Key {
+  
   sequence: string;
   name: string;
   ctrl: boolean;

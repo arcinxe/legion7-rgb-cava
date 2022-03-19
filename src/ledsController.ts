@@ -8,8 +8,8 @@ import * as Types from "./types";
 export default class LedsController {
   leds: Leds;
   deviceInfo: HID.Device | undefined;
-  color: Types.Color;
-  constructor(defaultColor: Types.Color) {
+  color: Types.ColorRgb;
+  constructor(defaultColor: Types.ColorRgb) {
     const devices = HID.devices();
     this.color = defaultColor;
     this.deviceInfo = devices.find(

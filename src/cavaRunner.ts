@@ -21,7 +21,7 @@ export default class CavaRunner {
       let lines = str.split(/(\r?\n)/g);
       let text = lines.join("");
       let values = text.split(";");
-      let isFull = values.length === 13 && values[values.length - 1] === "!";
+      let isFull = values.length === 21 && values[values.length - 1] === "!";
       if (isFull) values.pop();
       values = values
         .map((v) => v?.padStart(3, "0"))

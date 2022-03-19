@@ -12,12 +12,14 @@ export default class KeyboardAnimator {
   keyboardWidthMm = 330;
   keyboardHeightMm = 120;
   keyboardMargins = { top: 5, right: 0, bottom: 5, left: 0 };
-  color: Types.Color;
+  colorRgb: Types.ColorRgb;
+  colorHsl: Types.ColorHsl;
   constructor(ledsController: LedsController, configManager: ConfigManager) {
     this.ledsController = ledsController;
     this.configManager = configManager;
     this.audioData = [];
-    this.color = ledsController.color;
+    this.colorRgb = ledsController.color;
+    this.colorHsl = Functions.rgbColorToHsl(ledsController.color)
     let config = this.configManager.config;
     // console.log(JSON.stringify(config))
     ledsController.updateLeds();
@@ -27,8 +29,13 @@ export default class KeyboardAnimator {
     this.mode = mode;
   };
   selectHueAndLightness = (hue: number, lightness: number): void => {
-    this.color = Functions.hslToRgb(hue / 360, 1, lightness / 100);
-    console.log("current color: ", this.color);
+    this.colorRgb = Functions.hslToRgb(hue / 360, 1, lightness / 100);
+    console.log("current color: ", this.colorRgb);
+  };
+
+  changeHueAndLightness = (hue: number, lightness: number): void => {
+    this.colorRgb = Functions.hslToRgb(hue / 360, 1, lightness / 100);
+    console.log("current color: ", this.colorRgb);
   };
   onCavaData = (values: number[]): void => {
     this.audioData = values;
@@ -94,9 +101,9 @@ export default class KeyboardAnimator {
         }
       });
 
-      led.color.red = Math.floor((this.color.red * brightness) / 255);
-      led.color.green = Math.floor((this.color.green * brightness) / 255);
-      led.color.blue = Math.floor((this.color.blue * brightness) / 255);
+      led.color.red = Math.floor((this.colorRgb.red * brightness) / 255);
+      led.color.green = Math.floor((this.colorRgb.green * brightness) / 255);
+      led.color.blue = Math.floor((this.colorRgb.blue * brightness) / 255);
     });
     this.ledsController.updateLeds();
   };
